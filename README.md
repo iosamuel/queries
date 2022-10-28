@@ -10,7 +10,10 @@ For this project we are using **Vue 3** and **Tailwind**.
   - The algorithm is smart enough to know that if you have put the first word (for example `select`), you now need a second part (like `count(*)`) of an SQL query and so on, so it gives you new typeahead options that you can simply select with your keyboard while writing 😄.
 - As well as a pre-selected set of options in a **Select** field which will simply auto-complete the Input, since we want the **Input** to be the central part of the application.
 - For this we used the third party library `vue3-simple-typeahead` as we want some help to not design from zero the typeahead input widget.
-- Load time: TBD
+- Load time: **0.4s** in total, using **Lighthouse** to measure performance and overall load-time.
+  - Watching its stats for performance, specially watching metrics for **FCP**, **LCP** as well as **Time to Interactive**, which are the more critical ones to score high in Lighthouse and make google know that we have a performant site.
+  - Not taking really into account **Total Blocking Time** which is **0ms**, because we are in a *Client-Side* application, so the site in theory is not really blocked.
+  - Score for performance was a nice **100**
 - Optimisations: 
   - The only optimisation needed for this project was a paginated request to the endpoint due to the possibility of it having more than 1000 rows.
   - However there is no pagination functionallity as that may have been an overkill for the purpose of this challenge.
